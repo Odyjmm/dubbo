@@ -49,10 +49,10 @@ class DemoRequest implements Serializable {
     }
 
     public Class<?>[] getParameterTypes() {
-        return mParameterTypes;
+        return mParameterTypes.clone();
     }
 
     public Object[] getArguments() {
-        return mArguments;
+        return mArguments.clone();
     }
 }

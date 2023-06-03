@@ -111,7 +111,7 @@ public class ByteBuddyProxy {
         }
 
         public Class<?>[] getClasses() {
-            return classes;
+            return classes.clone();
         }
 
         @Override

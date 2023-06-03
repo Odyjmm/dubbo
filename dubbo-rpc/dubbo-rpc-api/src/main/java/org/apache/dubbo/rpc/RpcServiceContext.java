@@ -225,7 +225,7 @@ public class RpcServiceContext extends RpcContext {
      */
     @Override
     public Class<?>[] getParameterTypes() {
-        return parameterTypes;
+        return parameterTypes.clone();
     }
 
     @Override
@@ -240,7 +240,7 @@ public class RpcServiceContext extends RpcContext {
      */
     @Override
     public Object[] getArguments() {
-        return arguments;
+        return arguments.clone();
     }
 
     @Override

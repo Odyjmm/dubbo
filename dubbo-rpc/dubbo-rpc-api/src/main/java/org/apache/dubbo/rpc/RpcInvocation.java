@@ -359,7 +359,7 @@ public class RpcInvocation implements Invocation, Serializable {
 
     @Override
     public Class<?>[] getParameterTypes() {
-        return parameterTypes;
+        return parameterTypes.clone();
     }
 
     public void setParameterTypes(Class<?>[] parameterTypes) {
@@ -376,7 +376,7 @@ public class RpcInvocation implements Invocation, Serializable {
 
     @Override
     public String[] getCompatibleParamSignatures() {
-        return compatibleParamSignatures;
+        return compatibleParamSignatures.clone();
     }
 
     // parameter signatures can be set independently, it is useful when the service type is not found on caller side and
@@ -387,7 +387,7 @@ public class RpcInvocation implements Invocation, Serializable {
 
     @Override
     public Object[] getArguments() {
-        return arguments;
+        return arguments.clone();
     }
 
     public void setArguments(Object[] arguments) {
@@ -661,7 +661,7 @@ public class RpcInvocation implements Invocation, Serializable {
     }
 
     public Type[] getReturnTypes() {
-        return returnTypes;
+        return returnTypes.clone();
     }
 
     public void setReturnTypes(Type[] returnTypes) {

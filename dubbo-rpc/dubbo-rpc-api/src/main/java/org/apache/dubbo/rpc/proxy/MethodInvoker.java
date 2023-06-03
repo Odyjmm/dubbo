@@ -82,7 +82,7 @@ public interface MethodInvoker {
             }
 
             public Class<?>[] getParametersType() {
-                return parametersType;
+                return parametersType.clone();
             }
         }
     }
