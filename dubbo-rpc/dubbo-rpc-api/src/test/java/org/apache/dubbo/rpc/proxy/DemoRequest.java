@@ -36,8 +36,8 @@ class DemoRequest implements Serializable {
     public DemoRequest(String serviceName, String methodName, Class<?>[] parameterTypes, Object[] args) {
         mServiceName = serviceName;
         mMethodName = methodName;
-        mParameterTypes = parameterTypes;
-        mArguments = args;
+        mParameterTypes = parameterTypes.clone();
+        mArguments = args.clone();
     }
 
     public String getServiceName() {

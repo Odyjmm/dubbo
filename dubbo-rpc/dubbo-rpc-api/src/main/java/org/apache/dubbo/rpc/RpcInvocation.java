@@ -382,7 +382,7 @@ public class RpcInvocation implements Invocation, Serializable {
     // parameter signatures can be set independently, it is useful when the service type is not found on caller side and
     // the invocation is not generic invocation either.
     public void setCompatibleParamSignatures(String[] compatibleParamSignatures) {
-        this.compatibleParamSignatures = compatibleParamSignatures;
+        this.compatibleParamSignatures = compatibleParamSignatures.clone();
     }
 
     @Override
@@ -665,7 +665,7 @@ public class RpcInvocation implements Invocation, Serializable {
     }
 
     public void setReturnTypes(Type[] returnTypes) {
-        this.returnTypes = returnTypes;
+        this.returnTypes = returnTypes.clone();
     }
 
     public InvokeMode getInvokeMode() {

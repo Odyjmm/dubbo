@@ -230,7 +230,7 @@ public class RpcServiceContext extends RpcContext {
 
     @Override
     public void setParameterTypes(Class<?>[] parameterTypes) {
-        this.parameterTypes = parameterTypes;
+        this.parameterTypes = parameterTypes.clone();
     }
 
     /**
@@ -245,7 +245,7 @@ public class RpcServiceContext extends RpcContext {
 
     @Override
     public void setArguments(Object[] arguments) {
-        this.arguments = arguments;
+        this.arguments = arguments.clone();
     }
 
     /**
