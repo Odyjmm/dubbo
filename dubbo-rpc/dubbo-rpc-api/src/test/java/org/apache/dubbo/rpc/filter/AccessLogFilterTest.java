@@ -65,7 +65,7 @@ class AccessLogFilterTest {
     // TODO how to assert thread action
     @Test
     @SuppressWarnings("unchecked")
-    public void testDefault() throws NoSuchFieldException, IllegalAccessException {
+    private void testDefault() throws NoSuchFieldException, IllegalAccessException {
         URL url = URL.valueOf("test://test:11/test?accesslog=true&group=dubbo&version=1.1");
         Invoker<AccessLogFilterTest> invoker = new MyInvoker<AccessLogFilterTest>(url);
         Invocation invocation = new MockInvocation();

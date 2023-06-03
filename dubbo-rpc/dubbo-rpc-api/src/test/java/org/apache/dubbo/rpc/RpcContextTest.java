@@ -205,7 +205,7 @@ class RpcContextTest {
         Assertions.assertEquals(map, rpcContext.getObjectAttachments());
     }
     @Test
-    public void say() {
+    private void say() {
         final String key = "user-attachment";
         final String value = "attachment-value";
         RpcContext.getServerContext().setObjectAttachment(key, value);
@@ -220,7 +220,7 @@ class RpcContextTest {
     }
 
     @Test
-    public void testRpcServerContextAttachment() {
+    private void testRpcServerContextAttachment() {
         RpcContextAttachment attachment = RpcContext.getServerContext();
         attachment.setAttachment("key_1","value_1");
         attachment.setAttachment("key_2","value_2");
@@ -267,7 +267,7 @@ class RpcContextTest {
     }
 
     @Test
-    public void testRpcServerContextClearAttachment() {
+    private void testRpcServerContextClearAttachment() {
         RpcServerContextAttachment attachment = new RpcServerContextAttachment();
         attachment.setAttachment("key_1","value_1");
         attachment.setAttachment("key_2","value_2");
@@ -287,7 +287,7 @@ class RpcContextTest {
     }
 
     @Test
-    public void testAsyncContext() {
+    private void testAsyncContext() {
         RpcServerContextAttachment attachment = new RpcServerContextAttachment();
         AsyncContext asyncContext = new AsyncContextImpl();
         attachment.setAsyncContext(asyncContext);
@@ -298,7 +298,7 @@ class RpcContextTest {
     }
 
     @Test
-    public void testObjectAttachmentMap() {
+    private void testObjectAttachmentMap() {
         RpcServerContextAttachment attachment  = new RpcServerContextAttachment();
         RpcServerContextAttachment.ObjectAttachmentMap objectAttachmentMap = new RpcServerContextAttachment.ObjectAttachmentMap(attachment);
         objectAttachmentMap.put("key_1", "value_1");
@@ -327,7 +327,7 @@ class RpcContextTest {
     }
 
     @Test
-    public void testClearAttachmentMap() {
+    private void testClearAttachmentMap() {
         RpcServerContextAttachment attachment  = new RpcServerContextAttachment();
         RpcServerContextAttachment.ObjectAttachmentMap objectAttachmentMap = new RpcServerContextAttachment.ObjectAttachmentMap(attachment);
         objectAttachmentMap.put("key_1", "value_1");

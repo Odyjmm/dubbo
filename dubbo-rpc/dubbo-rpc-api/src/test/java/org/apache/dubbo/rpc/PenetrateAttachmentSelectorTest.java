@@ -47,7 +47,7 @@ class PenetrateAttachmentSelectorTest {
     }
 
     @Test
-    public void testSelectReverse() {
+    private void testSelectReverse() {
         ExtensionLoader<PenetrateAttachmentSelector> selectorExtensionLoader = ApplicationModel.defaultModel().getExtensionLoader(PenetrateAttachmentSelector.class);
         Set<String> supportedSelectors = selectorExtensionLoader.getSupportedExtensions();
         Map<String, Object> allSelected = new HashMap<>();

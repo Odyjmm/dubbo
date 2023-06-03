@@ -380,7 +380,7 @@ class RpcUtilsTest {
             "stringLength",
             "testReturnType"
     })
-    public void testGetMethodName(String methodName) {
+    private void testGetMethodName(String methodName) {
         Class<?> demoServiceClass = DemoService.class;
         String serviceName = demoServiceClass.getName();
         Invoker invoker = mock(Invoker.class);
@@ -398,7 +398,7 @@ class RpcUtilsTest {
             "apache",
             "dubbo"
     })
-    public void testGet_$invoke_MethodName(String method) {
+    private void testGet_$invoke_MethodName(String method) {
         Class<?> demoServiceClass = DemoService.class;
         String serviceName = demoServiceClass.getName();
         Invoker invoker = mock(Invoker.class);
