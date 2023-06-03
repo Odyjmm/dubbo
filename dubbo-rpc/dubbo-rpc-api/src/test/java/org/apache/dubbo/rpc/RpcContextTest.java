@@ -303,26 +303,26 @@ class RpcContextTest {
         RpcServerContextAttachment.ObjectAttachmentMap objectAttachmentMap = new RpcServerContextAttachment.ObjectAttachmentMap(attachment);
         objectAttachmentMap.put("key_1", "value_1");
         Set<String> keySet = objectAttachmentMap.keySet();
-        Assertions.assertEquals(true, keySet.contains("key_1"));
+        Assertions.assertTrue(keySet.contains("key_1"));
         Collection<Object> valueSet = objectAttachmentMap.values();
-        Assertions.assertEquals(true, valueSet.contains("value_1"));
+        Assertions.assertTrue(valueSet.contains("value_1"));
         Set<Map.Entry<String, Object>> entrySet = objectAttachmentMap.entrySet();
         Map.Entry<String, Object> entry = entrySet.iterator().next();
         Assertions.assertEquals("key_1", entry.getKey());
         Assertions.assertEquals("value_1", entry.getValue());
-        Assertions.assertEquals(true, objectAttachmentMap.containsKey("key_1"));
-        Assertions.assertEquals(true, objectAttachmentMap.containsValue("value_1"));
+        Assertions.assertTrue(objectAttachmentMap.containsKey("key_1"));
+        Assertions.assertTrue(objectAttachmentMap.containsValue("value_1"));
         Assertions.assertEquals("value_1", objectAttachmentMap.get("key_1"));
-        Assertions.assertEquals(null, objectAttachmentMap.get("key_2"));
+        Assertions.assertNull(objectAttachmentMap.get("key_2"));
         objectAttachmentMap.remove("key_1");
-        Assertions.assertEquals(null, objectAttachmentMap.get("key_1"));
+        Assertions.assertNull(objectAttachmentMap.get("key_1"));
         Map<String, String> map = new HashMap<>();
         map.put("key_3","value_3");
         map.put("key_4","value_4");
         objectAttachmentMap.putAll(map);
         Assertions.assertEquals("value_3", objectAttachmentMap.get("key_3"));
         Assertions.assertEquals("value_4", objectAttachmentMap.get("key_4"));
-        Assertions.assertEquals(null, objectAttachmentMap.remove(new Object()));
+        Assertions.assertNull(objectAttachmentMap.remove(new Object()));
         objectAttachmentMap.clear();
     }
 
