@@ -165,7 +165,7 @@ public class RpcContextAttachment extends RpcContext{
     @Override
     public RpcContextAttachment setAttachments(Map<String, String> attachment) {
         this.attachments.clear();
-        if (attachment != null && attachment.size() > 0) {
+        if (attachment != null && attachment.isEmpty()) {
             this.attachments.putAll(attachment);
         }
         return this;

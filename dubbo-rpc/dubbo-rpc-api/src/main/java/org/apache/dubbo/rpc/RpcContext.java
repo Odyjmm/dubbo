@@ -617,7 +617,7 @@ public class RpcContext {
      */
     public RpcContext setAttachments(Map<String, String> attachment) {
         CLIENT_ATTACHMENT.get().attachments.clear();
-        if (attachment != null && attachment.size() > 0) {
+        if (attachment != null && attachment.isEmpty()) {
             CLIENT_ATTACHMENT.get().attachments.putAll(attachment);
         }
         return this;
@@ -632,7 +632,7 @@ public class RpcContext {
     @Experimental("Experiment api for supporting Object transmission")
     public RpcContext setObjectAttachments(Map<String, Object> attachment) {
         CLIENT_ATTACHMENT.get().attachments.clear();
-        if (attachment != null && attachment.size() > 0) {
+        if (attachment != null && attachment.isEmpty()) {
             CLIENT_ATTACHMENT.get().attachments.putAll(attachment);
         }
         return this;
