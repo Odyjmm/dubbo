@@ -220,6 +220,7 @@ public class AsyncRpcResult implements Result {
         return getAppResponse().recreate();
     }
 
+    @Override
     public Result whenCompleteWithContext(BiConsumer<Result, Throwable> fn) {
         this.responseFuture = this.responseFuture.whenComplete((v, t) -> {
             if (async) {

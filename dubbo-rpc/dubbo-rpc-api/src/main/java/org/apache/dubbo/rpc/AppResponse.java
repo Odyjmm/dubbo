@@ -131,6 +131,7 @@ public class AppResponse implements Result {
      *
      * @param map contains all key-value pairs to append
      */
+    @Override
     public void setAttachments(Map<String, String> map) {
         this.attachments = map == null ? new HashMap<>() : new HashMap<>(map);
     }
@@ -140,6 +141,7 @@ public class AppResponse implements Result {
         this.attachments = map == null ? new HashMap<>() : map;
     }
 
+    @Override
     public void addAttachments(Map<String, String> map) {
         if (map == null) {
             return;
